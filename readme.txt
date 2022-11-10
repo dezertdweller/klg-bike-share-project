@@ -1,4 +1,10 @@
-Hello!
+Hello! Welcome to my Bike Share project.
+
+You'll first need to go here to download the .csv files to run this program on your machine:
+
+I hope you enjoy the project!
+
+-----------------------------------------------------------------------------------------------
 
 Below are the sites I referred to in writing my script for the Bike Share data.
 
