@@ -101,7 +101,7 @@ def get_filters():
             print('That is not a valid entry. Please select one of the day options available.')
             continue
     
-
+    # asks user if they want to continue to the statistical analysis.
     while True:
         response = input ('Would you like to continue? Yes or No: ')
         if response.lower() in yes_list:
