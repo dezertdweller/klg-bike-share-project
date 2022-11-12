@@ -3,7 +3,7 @@
 ## About This Project
 
 Hello! Welcome to my Bike Share Python Project. This project was created to meet completion requirements for my 
-Udacity [Programming for Data Science with Python][1] course. Through this course, I learned basics of Python programming
+Udacity [Programming for Data Science with Python](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104) course. Through this course, I learned basics of Python programming
 and how to create a program that could conduct some statistical analysis of US Bike Share data. This program prompts the 
 user with some questions about the following:
 * which city they want to filter data for
@@ -14,7 +14,6 @@ The program also checks for whether the user wants to continue through the vario
 
 I hope you enjoy the project and get to learn some fun facts about US Bike Share data!
 
-[1]: https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
 
 ## Software Requirements
 
