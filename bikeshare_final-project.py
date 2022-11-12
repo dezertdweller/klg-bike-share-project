@@ -53,6 +53,7 @@ def get_filters():
     print()
     print('You\'ll be able to view raw data, time stats, station stats, trip duration, and user information.')
     print()
+    
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
             city = input('Which city you would like to view data for: Chicago, New York City, or Washington? ')
@@ -136,7 +137,7 @@ def load_data(city, month, day):
     """
     df = pd.read_csv(CITY_DATA[city])
     
-     # coverting Start Time columns to datetime
+    # coverting Start Time columns to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     # extract month, day of week, and hour from Start Time to create new columns
@@ -165,6 +166,7 @@ def raw_data(df):
     """
     see_data = True 
 
+    #prompt user if they would like to see raw data
     while (see_data):
         view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
         start_loc = 0
@@ -173,6 +175,7 @@ def raw_data(df):
         if view_data in yes_list:    
             print(df.iloc[start_loc:start_loc + 5])
 
+            #asks user if they would like to continue seeing 5 rows of data at a time
             while (keep_asking):
                 start_loc += 5
                 view_display = input("Do you wish to continue viewing 5 additional rows of data?: ").lower()
@@ -189,10 +192,12 @@ def raw_data(df):
                     print()
                     print('That was not a valid entry. Please enter yes or no. ')
                     continue
+        
         elif view_data in no_list:
             print()
             print('Okay, we will move on to the next section!')
             break
+        
         else:
            print()
            print('That is not a valid entry. Please enter yes or no. ')
@@ -372,7 +377,6 @@ def user_stats(df):
             break 
 
     # Display earliest, most recent, and most common year of birth
-    
     while True:
         if 'Birth Year' in df.columns:
             earliest_year = df['Birth Year'].min()
