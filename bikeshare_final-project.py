@@ -292,13 +292,16 @@ def station_stats(df):
     print('-'*40)
 
 def convert(seconds):
-        days = seconds // (24 * 3600)
-        seconds = seconds % (24 * 3600)
-        hours = seconds // 3600
-        seconds %= 3600
-        minutes = seconds // 60
-        seconds %= 60
-        return "%d days, %d hours, %02d minutes, and %02d seconds" % (days, hours, minutes, seconds)
+    """
+    Converts seconds into a more user-friendly time measurement. 
+    """    
+    days = seconds // (24 * 3600)
+    seconds = seconds % (24 * 3600)
+    hours = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return "%d days, %d hours, %02d minutes, and %02d seconds" % (days, hours, minutes, seconds)
 
 def trip_duration_stats(df):
     """
@@ -317,6 +320,7 @@ def trip_duration_stats(df):
     print('The total travel time for the period you selected was {}.'.format(total_travel_time))
 
     # display mean travel time
+   
     mean_time = df['Trip Duration'].mean()
 
     print()
@@ -344,11 +348,13 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
+   
     user_count = df.groupby(['User Type'])['User Type'].count()
     print()
     print('The table below will demonstrate the counts by User Type: \n', user_count)
 
     # Display counts of gender
+   
     while True:
         if 'Gender' in df.columns:
             gender_count = df.groupby(['Gender'])['Gender'].count()
@@ -359,7 +365,9 @@ def user_stats(df):
             print()
             print('Sorry, but we do not have any gender data for Washington, so we cannot show you counts by gender.')
             break
+    
     # Display counts of null gender values
+    
     while True: 
         if 'Gender' in df.columns:
             gender_null_count = df['Gender'].isnull().count()
