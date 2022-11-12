@@ -3,6 +3,7 @@ import time
 import pandas as pd
 import numpy as np
 import sys
+from tabulate import tabulate
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -173,14 +174,14 @@ def raw_data(df):
         keep_asking = True
         
         if view_data in yes_list:    
-            print(df.iloc[start_loc:start_loc + 5])
+            print(tabulate(df.iloc[start_loc:start_loc + 5], headers ='keys'))
 
             #asks user if they would like to continue seeing 5 rows of data at a time
             while (keep_asking):
                 start_loc += 5
                 view_display = input("Do you wish to continue viewing 5 additional rows of data?: ").lower()
                 if view_display in yes_list:
-                    print(df.iloc[start_loc:start_loc + 5])
+                    print(tabulate(df.iloc[start_loc:start_loc + 5], headers ='keys'))
                     continue
                 elif view_display in no_list:
                     keep_asking = False
