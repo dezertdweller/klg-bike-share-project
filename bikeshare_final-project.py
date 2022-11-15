@@ -1,10 +1,10 @@
-from importlib.resources import path
-import time
-import pandas as pd
-import numpy as np
 import sys
-from tabulate import tabulate
+import time
+from importlib.resources import path
 
+import numpy as np
+import pandas as pd
+from tabulate import tabulate
 
 # Note: you will need to replace the path with where you save the .csv data files for the three cities.
 CITY_DATA = { 'chicago': '~/data-files/bikeshare/chicago.csv',
@@ -20,7 +20,6 @@ def continue_prompt():
     """
     prompt user if they would like to continue through various statistical analysis processes
     """
-
     print()
     print('We are now going to display some more statistics.')
 
@@ -96,7 +95,6 @@ def get_filters():
         day = input('Which day would you like to filter the data by? ')
         if day.lower().strip() in WEEK_DATA:
             day = day.lower().strip()
-            
             print()
             print('Thank you for selecting your filters. We are now going to display some relevant data summaries.')
             break
@@ -346,7 +344,6 @@ def trip_duration_stats(df):
     print('-'*40)
 
 
-
 def user_stats(df):
     """
     Displays statistics on bikeshare users.
@@ -356,13 +353,11 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
-   
     user_count = df.groupby(['User Type'])['User Type'].count()
     print()
     print('The table below will demonstrate the counts by User Type: \n', user_count)
 
     # Display counts of gender
-   
     while True:
         if 'Gender' in df.columns:
             gender_count = df.groupby(['Gender'])['Gender'].count()
@@ -375,7 +370,6 @@ def user_stats(df):
             break
     
     # Display counts of null gender values
-    
     while True: 
         if 'Gender' in df.columns:
             gender_null_count = df['Gender'].isnull().count()
