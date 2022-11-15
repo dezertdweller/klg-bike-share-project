@@ -5,9 +5,11 @@ import numpy as np
 import sys
 from tabulate import tabulate
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+
+# Note: you will need to replace the path with where you save the .csv data files for the three cities.
+CITY_DATA = { 'chicago': '~/data-files/bikeshare/chicago.csv',
+              'new york city': '~/data-files/bikeshare/new_york_city.csv',
+              'washington': '~/data-files/bikeshare/washington.csv' }
 
 MONTH_DATA = ['january', 'february', 'march', 'april', 'may', 'june', 'all months']
 WEEK_DATA = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
