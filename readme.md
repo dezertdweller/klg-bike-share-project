@@ -41,7 +41,13 @@ To run this program, you will need to access your command line interface and pyt
 
 ## Files You Will Need to Download
 
-You'll first need to go [here](https://www.kaggle.com/code/deepak525/us-bike-share-analysis/data) to download the .csv files for Chicago, New York, and Washington to run this program on your machine. Make sure to save these files in the same directory as the .py file.
+You'll first need to go [here](https://www.kaggle.com/code/deepak525/us-bike-share-analysis/data) to download the .csv files for Chicago, New York, and Washington to run this program on your machine. Make sure to save these files in a directory on your local machine. Update the ~/data-files/bikeshare/ portion of the codeblock file paths as demonstrated below. 
+
+```
+CITY_DATA = { 'chicago': '~/your-path/chicago.csv',
+              'new york city': '~/your-path/new_york_city.csv',
+              'washington': '~/your-path/washington.csv' }
+```
 
 ## Credits and Resources
 
